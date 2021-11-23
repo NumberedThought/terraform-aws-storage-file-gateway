@@ -45,3 +45,7 @@ output "nfs_path" {
   description = "The file share path used by the NFS client to identify the mount point."
 }
 
+output "nfs_host" {
+  value = "${aws_instance.this.private_ip}:${aws_storagegateway_nfs_file_share.this.path}"
+}
+
